@@ -67,5 +67,30 @@
     text-align: center;
     background-image: url('./assets/fondo.jpg');
     background-size: cover;
-}
+  }
+  .card{
+    max-width: 60%
+  }
+  .card-title{
+    position: absolute;
+    padding: 20px;
+  }
+  .card-date{
+    position: absolute;
+    padding-left: 20px;
+    margin-top: 60px;
+  }
+  .cart.temp{
+    position: absolute;
+    padding-left: 20px;
+    margin-top: 260px;
+    font-size: 50px;
+  }
+  .card-desc{
+    position: absolute;
+    padding-left: 20px;
+    margin-top: 320px;
+  }
+
+  
 }

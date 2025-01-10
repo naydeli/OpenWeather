@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import React  from 'react'
 import SearchWeather from './SearchWeather';
-
+import Card from './card';
 
 const WeatherPanel = () => {
 
-    let urlWeather = "https://api.openweathermap.org/data/2.5/weather?appid=b224c5e421318de0a3b4c2ce90611833&lang=es";
-    let cityUrl = "&q=";
+    let urlWeather = "https://api.openweathermap.org/data/2.5/weather?appid=b224c5e421318de0a3b4c2ce90611833&lang=es"
+    let cityUrl = "&q="
 
     let urlForecast ="https://api.openweathermap.org/data/2.5/forecast?appid=b224c5e421318de0a3b4c2ce90611833&lang=es"
  
@@ -61,11 +61,16 @@ const WeatherPanel = () => {
     }
     return ( 
     
-            <div>
-               <React.Fragment>
-               <SearchWeather newLocation={getLocation} />
-               </React.Fragment>
-            </div>
+        
+        <React.Fragment>
+         <SearchWeather newLocation={getLocation} />
+         <Card
+          showData = {show}
+          loadingData = {loading}
+          weather = {weather}
+          forecast = {forecast}
+          />
+        </React.Fragment>
            
        
     );

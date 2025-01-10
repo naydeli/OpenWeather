@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-const SearchWeather = (newLocation) => {
+const SearchWeather = ({newLocation}) => {
    
   const [city,setCity] =useState("");
 
@@ -11,7 +11,7 @@ const SearchWeather = (newLocation) => {
     console.log({city});
     if(city === "" || !city) return;
 
-   newLocation(city);
+    newLocation(city);
   }
   return (
     
