@@ -2,6 +2,7 @@ import React from 'react'
 import Spinner from './Spinner'
 
 const Card = ({loadingData, showData, weather, forecast}) => {
+    console.log('forecast: ', forecast)
 
     const today = new Date();
     const day = today.getDate();
@@ -26,17 +27,25 @@ const Card = ({loadingData, showData, weather, forecast}) => {
     }
     
     if(showData){
+      console.log('Tiempo', weather)
+
+
         url = "http://openweathermap.org/img/w/";
-        iconUrl = url + weather.weather[0].icon + ".png";
+        iconUrl = url + weather.list[0].weather[0].icon + ".png";
 
         iconUrl3 = url + forecast.list[1].weather[0].icon +"png";
         iconUrl6 = url + forecast.list[2].weather[0].icon +"png";
         iconUrl9 = url + forecast.list[3].weather[0].icon +"png";
 
-        forecastData3 = forecast.list[1].dt_text.substring(8, 10) + '/' + forecast.list[1].dt_txt.substring(5, 7) + '/' +  forecast.list[1].dt_txt.substring(0, 4) + '' + forecast.list[1].dt_txt.substring(11, 7);
-        forecastData6 = forecast.list[2].dt_text.substring(8, 10) + '/' + forecast.list[2].dt_txt.substring(5, 7) + '/' +  forecast.list[1].dt_txt.substring(0, 4) + '' + forecast.list[1].dt_txt.substring(11, 7);
-        forecastData9 = forecast.list[3].dt_text.substring(8, 10) + '/' + forecast.list[3].dt_txt.substring(5, 7) + '/' +  forecast.list[1].dt_txt.substring(0, 4) + '' + forecast.list[1].dt_txt.substring(11, 7);
+        // const dia = forecast?.list[1].dt_text.substring(8, 10)
+
+        //forecastData3 = dia + '/' + forecast?.list[1].dt_txt.substring(5, 7) + '/' +  forecast.list[1].dt_txt.substring(0, 4) + '' + forecast.list[1].dt_txt.substring(11, 7);
+        //forecastData6 = forecast?.list[2].dt_text.substring(8, 10) + '/' + forecast?.list[2].dt_txt.substring(5, 7) + '/' +  forecast.list[1].dt_txt.substring(0, 4) + '' + forecast.list[1].dt_txt.substring(11, 7);
+        // forecastData9 = forecast?.list[3].dt_text.substring(8, 10) + '/' + forecast?.list[3].dt_txt.substring(5, 7) + '/' +  forecast.list[1].dt_txt.substring(0, 4) + '' + forecast.list[1].dt_txt.substring(11, 7);
         
+        forecastData3 = 0
+        forecastData6 = 0
+        forecastData9 = 0 
 
     } 
 

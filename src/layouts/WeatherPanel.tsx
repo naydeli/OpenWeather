@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React  from 'react'
 import SearchWeather from './SearchWeather';
-import Card from './card';
+import Card from './Card';
 
 const WeatherPanel = () => {
 
@@ -40,13 +40,11 @@ const WeatherPanel = () => {
         // Forecast
         urlForecast =urlForecast + cityUrl + loc;
 
-        await fetch(urlForecast).then((response) =>{
-            if(!response.ok) throw {response}
-            return response.json();
-
-        }).then((forecastData) => {
+        const response = await fetch(urlForecast).then(response => response.json())
+         .then((forecastData) => {
             console.log(forecastData);
             setWeather(forecastData);
+            setForecast(forecastData)
 
             setLoading(false);
             setShow(true);
@@ -56,6 +54,9 @@ const WeatherPanel = () => {
             setLoading(false);
             setShow(false);
         })
+
+        
+        return response;
         
         
     }
