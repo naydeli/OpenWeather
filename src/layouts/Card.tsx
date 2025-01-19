@@ -22,7 +22,7 @@ const Card = ({ loadingData, showData, weather, forecast }) => {
 
   if (showData) {
     url = 'http://openweathermap.org/img/w/';
-    iconUrl = url + weather.list[0].weather[0].icon + '.png';
+    iconUrl = url + forecast.list[0].weather[0].icon + '.png';
     iconUrl3 = url + forecast.list[1].weather[0].icon + '.png';
     iconUrl6 = url + forecast.list[2].weather[0].icon + '.png';
     iconUrl9 = url + forecast.list[3].weather[0].icon + '.png';
@@ -57,7 +57,7 @@ const Card = ({ loadingData, showData, weather, forecast }) => {
                 className="card-title"
                 style={{ color: 'white', fontWeight: 'bold', marginBottom: '1rem' }}
               >
-                {weather.city.name}
+                {weather?.city?.name}
               </h3>
               <p
                 className="card-date"
@@ -66,14 +66,14 @@ const Card = ({ loadingData, showData, weather, forecast }) => {
                 {date}
               </p>
               <h1 className="card-temp">
-                {(weather.list[0].main.temp - 273.15).toFixed(1)}°C
+                {(weather?.list[0]?.main?.temp - 273.15).toFixed(1)}°C
               </h1>
               <p
                 className="card-desc d-flex align-items-center justify-content-center"
                 style={{ marginBottom: '1rem' }}
               >
                 <img src={iconUrl} alt="icon" />
-                {weather.list[0].weather[0].description}
+                {weather?.list[0]?.weather[0]?.description}
               </p>
               <img
                 src="https://images.pexels.com/photos/1334605/pexels-photo-1334605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
