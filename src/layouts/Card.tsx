@@ -43,11 +43,7 @@ const Card = ({ loadingData, showData, weather, forecast }) => {
     forecastDate6 = getDateString(2);
     forecastDate9 = getDateString(3);
   }
-  //<div className="w-[450px]">
-  //<AspectRatio ratio={16 / 9}>
-   // <Image src="..." alt="Image" className="rounded-md object-cover" />
-  //</AspectRatio>
-//</div>
+  
   return (
     <div className="w-[1200px]">
       {showData === true ? (
