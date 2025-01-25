@@ -1,21 +1,51 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useEffect } from 'react';
 
 const SearchWeather = ({ newLocation }) => {
   const [city, setCity] = useState('');
+
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log({ city });
-    if (city === '' || !city) return;
+    console.log('Ciudad', city );
 
-    newLocation(city);
+    if (!city) {
+      
+      return;
+    }
+
+    newLocation(city); 
   };
+
+  useEffect(() => {
+    // Obtener la ubicación actual usando la API de geolocalización
+    navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+
+      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=3be3544cfcdfda1a26148a2d10a5968d`)
+        .then((response) => response.json())
+        .then((data) => {
+          const cityName = data.name;
+          setCity(cityName);
+
+          // Actualiza la ubicación automáticamente si se encuentra una ciudad
+          if (cityName) {
+            setTimeout(() => {
+              newLocation(cityName);
+            }, 3000);
+          }
+        })
+        
+    });
+  }, []);
+
   return (
     <div className="container">
       <form onSubmit={onSubmit}>
-        <div className="flex items-center w-full space-x-2 max auto">
+        <div className="flex items-center w-full space-x-2 max-auto">
           <Input
+            value={city}
             type="text"
             placeholder="City"
             onChange={(e) => setCity(e.target.value)}
@@ -24,6 +54,7 @@ const SearchWeather = ({ newLocation }) => {
         </div>
       </form>
     </div>
-    );
-  };
-  export default SearchWeather;
+  );
+};
+
+export default SearchWeather;

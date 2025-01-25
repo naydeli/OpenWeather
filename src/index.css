@@ -73,29 +73,38 @@
   }
   .card-title{
     position: absolute;
-    padding: 20px;
+    padding: 15px;
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 40px;
+    font-family: 'Roboto, bold';
   }
   .card-date{
     position: absolute;
-    padding-left: 20px;
-    margin-top: 450px;
-    margin-top: 70px;
+    padding-left: 25px;
+    margin-top: 80px;
+    font-size: 20px;
+    font-family: 'Roboto, bold';
   }
   .card-temp{
     position: absolute;
     padding-left: 30px;
-    margin-top: 450px;
-    font-size: 50px;
+    margin-top: 350px;
+    font-size: 48px;
+    color: black;
+    font-family: 'Roboto, bold';
+    
     
   }
   .card-desc{
     position: absolute;
     padding-left: 20px;
-    margin-top: 500px;
-    font-size: 25px;
+    margin-top: 400px;
+    font-size: 30px;
+    color: black;
+    font-family: 'Roboto, bold';
+    
   }
+  
  
 
   
