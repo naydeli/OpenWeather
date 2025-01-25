@@ -53,61 +53,62 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%}
-}
-@layer base {
-  * {
-    @apply border-border;
   }
-  body {
-    @apply  bg-slate-900 text-foreground;
-  }
-  body{
-    text-align: center;
-    background-image: url('./assets/pexels-mareefe-5710764.jpg');
-    background-size: cover;
-  }
-  .card{
-    max-width: 60%
-  }
-  .card-title{
-    position: absolute;
-    padding: 20px;
-    margin-top: 20px;
-    font-size: 35px;
-    font-family: 'Roboto', bold;
-  }
-  .card-date{
-    position: absolute;
-    padding-left: 20px;
-    margin-top: 450px;
-    margin-top: 70px;
-    font-family: 'Roboto', bold;
-    font-size: 22px;
-  }
-  .card-temp{
-    position: absolute;
-    padding-left: 30px;
-    margin-top: 350px;
-    font-size: 48px;
-    font-family: 'Roboto', bold;
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply  bg-slate-900 text-foreground;
+    }
+    body{
+      text-align: center;
+      background-image: url('./assets/fondo.jpg');
+      background-size: cover;
+    }
+    .card{
+      max-width: 60%
+    }
+    .card-title{
+      position: absolute;
+      padding: 20px;
+      margin-top: 20px;
+      font-size: 35px;
+      font-family: 'Roboto', bold;
+      color: 'Black';
+    }
+    .card-date{
+      position: absolute;
+      padding-left: 25px;
+      margin-top: 450px;
+      margin-top: 80px;
+      font-family: 'Roboto', bold;
+      font-size: 22px;
+    }
+    .card-temp{
+      position: absolute;
+      padding-left: 30px;
+      margin-top: 350px;
+      font-size: 50px;
+      font-family: 'Roboto', bold;
+      
+    }
+    .card-desc{
+      position: absolute;
+      padding-left: 20px;
+      margin-top: 400px;
+      font-size: 30px;
+      font-family: 'Roboto', bold;
+    }
+   
+  
     
   }
-  .card-desc{
-    position: absolute;
-    padding-left: 20px;
-    margin-top: 400px;
-    font-size: 30px;
-    font-family: 'Roboto', bold;
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
   }
- 
-
-  
-}
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}

@@ -55,46 +55,49 @@ const Card = ({ loadingData, showData, weather, forecast }) => {
             >
               <h3
                 className="card-title"
-                style={{ color: 'white', fontWeight: 'bold', marginBottom: '1rem' }}
+                style={{ color: 'Black', fontWeight: 'bold', marginBottom: '1rem' }}
               >
                 {weather?.city?.name}
               </h3>
               <p
                 className="card-date"
-                style={{ color: 'white', fontWeight: 'bold', marginBottom: '1.5rem' }}
+                style={{ color: 'Black', fontWeight: 'bold', marginBottom: '1.5rem' }}
               >
                 {date}
               </p>
-              <h1 className="card-temp">
+              <h1 className="card-temp"
+              style={{ color: 'Black', fontWeight: 'bold', marginBottom: '1.5rem' }}
+              >
                 {(weather?.list[0]?.main?.temp - 273.15).toFixed(1)}°C
               </h1>
               <p
                 className="card-desc d-flex align-items-center justify-content-center"
-                style={{ marginBottom: '1rem' }}
+                style={{ marginBottom: '1rem', fontWeight: 'bold' }}
               >
                 <img src={iconUrl} alt="icon" />
                 {weather?.list[0]?.weather[0]?.description}
               </p>
               <img
-                src="https://images.pexels.com/photos/1334605/pexels-photo-1334605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                src="https://images.pexels.com/photos/1292843/pexels-photo-1292843.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="weather"
                 style={{
                   width: '100%',
                   height: '475px',
                   objectFit: 'cover',
                   borderRadius: '0.5rem',
+                  color: 'Black',
                 }}
               />
             </div>
             <div
-              className="col-md-8"
+              className="col-md-8 mt-0"
               style={{
                 background: 'linear-gradient(to right, #3b82f6, #64748b)',
-                padding: '2rem',
+                padding: '3.5rem',
                 borderRadius: '0.5rem',
                 marginTop: '2.5rem',
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                color: 'white',
+                
               }}
             >
               <div className="card-body text-start">
@@ -119,7 +122,7 @@ const Card = ({ loadingData, showData, weather, forecast }) => {
               </div>
               <hr />
               <div
-                className="row mt-6 card-body text-start"
+                className="row mt-10 card-body text-start"
                 style={{ display: 'flex', justifyContent: 'space-between' }}
               >
                 {[forecastDate3, forecastDate6, forecastDate9].map((date, index) => (
