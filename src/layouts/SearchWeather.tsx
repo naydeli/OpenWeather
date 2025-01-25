@@ -23,7 +23,7 @@ const SearchWeather = ({ newLocation }) => {
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
 
-      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=3be3544cfcdfda1a26148a2d10a5968d`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=b224c5e421318de0a3b4c2ce90611833`)
         .then((response) => response.json())
         .then((data) => {
           const cityName = data.name;

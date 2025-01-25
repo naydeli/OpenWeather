@@ -5,10 +5,10 @@ import Card from './Card';
 
 const WeatherPanel = () => {
 
-    let urlWeather = "https://api.openweathermap.org/data/2.5/weather?appid=3be3544cfcdfda1a26148a2d10a5968d&lang=es"
+    let urlWeather = "https://api.openweathermap.org/data/2.5/weather?appid=b224c5e421318de0a3b4c2ce90611833&lang=es"
     let cityUrl = "&q="
 
-    let urlForecast ="https://api.openweathermap.org/data/2.5/forecast?appid=3be3544cfcdfda1a26148a2d10a5968d&lang=es"
+    let urlForecast ="https://api.openweathermap.org/data/2.5/forecast?appid=b224c5e421318de0a3b4c2ce90611833&lang=es"
  
     const [weather, setWeather] = useState ([]);
     const [forecast, setForecast] = useState ([]);
