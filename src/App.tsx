@@ -7,13 +7,14 @@ import { useEffect } from 'react'
 
 
 
-function App() {
 
+function App() {
   useEffect(() => {
     // Get location using geolocation API
     navigator.geolocation.getCurrentPosition((position) => {
       console.log(position.coords.latitude, position.coords.longitude);
     
+
 
     //Using https://api.openweathermap.org/data/2.5/weather? get the city name passing the latitude and longitude
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=b224c5e421318de0a3b4c2ce90611833`)
@@ -30,7 +31,6 @@ function App() {
     })
   })
   });
- 
 
   return (
    <Page>

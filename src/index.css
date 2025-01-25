@@ -54,6 +54,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%}
   }
+<<<<<<< HEAD
   @layer base {
     * {
       @apply border-border;
@@ -112,3 +113,59 @@
       @apply bg-background text-foreground;
     }
   }
+=======
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply  bg-slate-900 text-foreground;
+  }
+  body{
+    text-align: center;
+    background-image: url('./assets/fondo.jpg');
+    background-size: cover;
+  }
+  .card{
+    max-width: 60%
+  }
+  .card-title{
+    position: absolute;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 40px;
+    font-family: 'Roboto, bold';
+  }
+  .card-date{
+    position: absolute;
+    padding-left: 25px;
+    margin-top: 80px;
+    font-size: 20px;
+    font-family: 'Roboto, bold';
+  }
+  .card-temp{
+    position: absolute;
+    padding-left: 30px;
+    margin-top: 350px;
+    font-size: 48px;
+    color: black;
+    font-family: 'Roboto, bold';
+    
+    
+  }
+  .card-desc{
+    position: absolute;
+    padding-left: 20px;
+    margin-top: 400px;
+    font-size: 30px;
+    color: black;
+    font-family: 'Roboto, bold';
+    
+  }
+  
+ 
+
+  
+}
+>>>>>>> ab42f000ca041c896eb9b88fb091e07fb0600c33
