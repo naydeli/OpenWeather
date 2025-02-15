@@ -1,7 +1,7 @@
 import React from 'react';
 import Spinner from './Spinner';
 import Image from "next/image"
-import { AspectRatio } from "@/components/ui/aspect-ratio"
+import { AspectRatio } from "../components/ui/aspect-ratio"
 
 
 const Card = ({ loadingData, showData, weather, forecast }) => {
@@ -26,9 +26,15 @@ const Card = ({ loadingData, showData, weather, forecast }) => {
   if (showData) {
     url = 'http://openweathermap.org/img/w/';
     iconUrl = url + weather.list[0].weather[0].icon + '.png';
-    iconUrl3 = url + forecast.list[1].weather[0].icon + '.png';
-    iconUrl6 = url + forecast.list[2].weather[0].icon + '.png';
-    iconUrl9 = url + forecast.list[3].weather[0].icon + '.png';
+    iconUrl3 = forecast.list[1]?.weather?.[0]?.icon 
+  ? url + forecast.list[1].weather[0].icon + '.png' 
+  : '';
+iconUrl6 = forecast.list[2]?.weather?.[0]?.icon 
+  ? url + forecast.list[2].weather[0].icon + '.png' 
+  : '';
+iconUrl9 = forecast.list[3]?.weather?.[0]?.icon 
+  ? url + forecast.list[3].weather[0].icon + '.png' 
+  : '';
 
     const getDateString = (index) => {
       const date = forecast.list[index].dt_txt;

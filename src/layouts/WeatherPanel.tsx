@@ -6,7 +6,7 @@ import Card from './Card';
 const WeatherPanel = () => {
    let urlWeather = `${import.meta.env.VITE_WEATHER_API_URL}appid=${import.meta.env.VITE_WEATHER_API_KEY}&lang=es`;
    let cityUrl = "&q=";
-   let urlForecast = `${import.meta.env.VITE_WEATHER_API_URL}appid=${import.meta.env.VITE_WEATHER_API_KEY}&lang=es`;
+   let urlForecast = `${import.meta.env.VITE_FORECAST_API_URL}appid=${import.meta.env.VITE_WEATHER_API_KEY}&lang=es`;
 
    const [weather, setWeather] = useState([]);
    const [forecast, setForecast] = useState([]);
