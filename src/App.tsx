@@ -15,13 +15,13 @@ function App() {
         console.log(position.coords.latitude, position.coords.longitude);
 
         //Using https://api.openweathermap.org/data/2.5/weather? get the city name passing the latitude and longitude
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=b224c5e421318de0a3b4c2ce90611833`)
+        fetch(`${import.meta.env.VITE_WEATHER_API_URL}appid=${import.meta.env.VITE_WEATHER_API_KEY}&lang=es`)
           .then(response => response.json())
           .then(data => {
             console.log(data.name);
 
             // Obtain the forecast for the city
-            fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${data.name}&appid=b224c5e421318de0a3b4c2ce90611833`)
+            fetch(`${import.meta.env.VITE_FORECAST_API_URL}appid=${import.meta.env.VITE_WEATHER_API_KEY}&lang=es`)
               .then(response => response.json())
               .then(data => {
                 console.log(data);
