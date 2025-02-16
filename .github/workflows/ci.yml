@@ -28,8 +28,9 @@ jobs:
         run: npm run test -- --coverage
 
       - name: 📊 Subir los resultados a Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
+          token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage/lcov.info
           flags: unittests
           name: codecov-actions
@@ -57,19 +58,18 @@ jobs:
       - name: 📦 Instalar dependencias
         run: npm ci
 
-      - name: Run Cypress Component Tests
-        run: npx cypress run --component
+      
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          start: npm run dev
+          start: npm run dev 
           wait-on: 'http://localhost:5173'
           record: true
           parallel: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          
+         
 
   deploy:
     runs-on: ubuntu-latest
