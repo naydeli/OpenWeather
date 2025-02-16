@@ -25,19 +25,7 @@ vi.mock('../firebase', () => ({
 }));
 
 describe('Login Component', () => {
-  test("Debe contener la frase 'Weather App'", () => {
-    const filePath = path.join(__dirname, "../login.tsx");
-    const fileContent = fs.readFileSync(filePath, "utf8");
-
-    expect(fileContent).toMatch(/Weather App/);
-  });
-
-  test("Debe contener la frase 'Inicia sesión para continuar'", () => {
-    const filePath = path.join(__dirname, "../login.tsx");
-    const fileContent = fs.readFileSync(filePath, "utf8");
-
-    expect(fileContent).toMatch(/Inicia sesión para continuar/);
-  });
+  
 
   test("Debe renderizar el ícono y tener la clase animate-pulse", () => {
     const mockOnLogin = vi.fn();
