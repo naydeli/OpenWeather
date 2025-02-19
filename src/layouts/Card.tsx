@@ -1,10 +1,10 @@
-import React from 'react';
+
 import Spinner from './Spinner';
-import Image from "next/image"
-import { AspectRatio } from "../components/ui/aspect-ratio"
 
 
-const Card = ({ loadingData, showData, weather, forecast }) => {
+
+
+const Card: React.FC<CardProps>  = ({ loadingData, showData, weather, forecast }) => {
   const today = new Date();
   const day = today.getDate();
   const month = today.getMonth() + 1;
@@ -29,19 +29,19 @@ const Card = ({ loadingData, showData, weather, forecast }) => {
     iconUrl3 = forecast.list[1]?.weather?.[0]?.icon 
   ? url + forecast.list[1].weather[0].icon + '.png' 
   : '';
-iconUrl6 = forecast.list[2]?.weather?.[0]?.icon 
+  iconUrl6 = forecast.list[2]?.weather?.[0]?.icon 
   ? url + forecast.list[2].weather[0].icon + '.png' 
   : '';
-iconUrl9 = forecast.list[3]?.weather?.[0]?.icon 
+ iconUrl9 = forecast.list[3]?.weather?.[0]?.icon 
   ? url + forecast.list[3].weather[0].icon + '.png' 
   : '';
 
-    const getDateString = (index) => {
+    const getDateString = (index: number) => {
       const date = forecast.list[index].dt_txt;
       const day = date.substring(8, 10);
       const month = date.substring(5, 7);
       const year = date.substring(0, 4);
-      const time = date.substring(11, 16);
+    
       return day + '/' + month + '/' + year;
     };
 

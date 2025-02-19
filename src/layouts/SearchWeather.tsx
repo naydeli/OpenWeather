@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 
-const SearchWeather = ({ newLocation, onLogout }) => {
+interface SearchWeatherProps {
+  newLocation: (city: string) => void;
+  onLogout: () => void;
+}
+
+const SearchWeather: React.FC<SearchWeatherProps> = ({ newLocation, onLogout }) => {
   const [city, setCity] = useState("");
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!city.trim()) return;
     newLocation(city);
